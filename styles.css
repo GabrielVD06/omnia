@@ -1,0 +1,504 @@
+/* ==========================================================================
+   1. VARIABLES & RESET BASE
+   ========================================================================== */
+:root {
+  --primary-gradient: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+  --blue-dark: #0F172A;
+  --blue-brand: #0072FF;
+  --text-muted: #475569;
+  --bg-light: #F8FAFC;
+  --card-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  --border-color: #E2E8F0;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--blue-dark);
+  background-color: #FFFFFF;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. NAVEGACIÓN (HEADER)
+   ========================================================================== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  letter-spacing: -0.03em;
+}
+
+/* Ocultar menú en móvil por defecto para evitar saturación */
+.nav-links {
+  display: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   3. BOTONES & COMPONENTES
+   ========================================================================== */
+.btn-primary {
+  background: var(--primary-gradient);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--blue-dark);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-light);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 0.75rem 0.75rem;
+  cursor: pointer;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   4. HERO SECTION (MÓVIL POR DEFECTO)
+   ========================================================================== */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem 1.25rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #EFF6FF;
+  color: var(--blue-brand);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* UI Showcase Mockup */
+.dashboard-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.dash-header {
+  background: #0B132B;
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.dash-body {
+  padding: 1rem;
+  background-color: var(--bg-light);
+}
+
+.dash-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.metric-card {
+  background: #FFFFFF;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.metric-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.status-up {
+  color: #10B981;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.dash-widgets-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.widget-card {
+  background: #FFFFFF;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.widget-card h4 {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.bar-chart-placeholder {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 60px;
+}
+
+.bar {
+  flex: 1;
+  background-color: #CBD5E1;
+  border-radius: 2px;
+}
+
+.bar.highlight {
+  background: var(--primary-gradient);
+}
+
+.order-list {
+  list-style: none;
+  font-size: 0.75rem;
+}
+
+.order-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.status-pill {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+.status-pill.green { background: #DCFCE7; color: #15803D; }
+.status-pill.orange { background: #FFEDD5; color: #C2410C; }
+.status-pill.blue { background: #E0F2FE; color: #0369A1; }
+
+.sub-features-bar {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES (TABLETS: >= 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 1.25rem 3%;
+  }
+
+  .hero-container {
+    padding: 3rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: row;
+    max-width: 400px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dash-widgets-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   6. MEDIA QUERIES (DESKTOP: >= 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+    gap: 1.8rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--blue-brand);
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 4rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+  }
+
+  .hero-cta-group {
+    max-width: 360px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Layout del contenedor de botones */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Estilo base tipo tarjeta limpia (Izquierda) */
+.system-card-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el texto a la izquierda */
+  justify-content: center;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0; /* Borde único, sutil y limpio */
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  outline: none;
+  
+  /* Transición fluida para elevar la tarjeta al interactuar */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Tipografía interna */
+.system-label {
+  font-size: 0.85rem;
+  color: #64748B;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.system-title {
+  font-size: 1.35rem;
+  color: #0F172A;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Interacción Hover: Invita al clic */
+.system-card-btn:hover {
+  transform: translateY(-3px);
+  border-color: #06B6D4; /* Tonalidad cian de OMNIA */
+  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.12);
+}
+
+/* Estado de Selección / Activo */
+.system-card-btn.active {
+  border-color: #0072FF;
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.1);
+  background-color: #FAFCFF;
+}
+
+/* Enfoque por teclado (Accesibilidad) */
+.system-card-btn:focus-visible {
+  outline: 2px solid #0072FF;
+  outline-offset: 2px;
+}
+/* ==========================================================================
+   ESTILOS DE BOTONES DE SISTEMA (MÓVIL Y DESKTOP)
+   ========================================================================== */
+
+/* Contenedor Grid adaptable */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Mantiene 2 columnas en móvil */
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Tarjeta Botón Limpia (Forzada para todas las pantallas) */
+.system-card-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* Mantiene alineación a la izquierda */
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left !important;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.system-label {
+  font-size: 0.75rem;
+  color: #64748B;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.system-title {
+  font-size: 1.1rem; /* Ajuste óptimo para pantallas pequeñas sin romper línea */
+  color: #0F172A;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Interacción Hover y Activo */
+.system-card-btn:hover {
+  transform: translateY(-2px);
+  border-color: #06B6D4;
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.12);
+}
+
+.system-card-btn.active {
+  border-color: #0072FF;
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.12);
+  background-color: #FAFCFF;
+}
+
+/* Ajuste específico dentro de Media Query si la pantalla es muy pequeña (< 400px) */
+@media (max-width: 400px) {
+  .metrics-grid {
+    grid-template-columns: 1fr; /* Pasa a 1 columna completa si el dispositivo es extremadamente estrecho */
+  }
+  
+  .system-card-btn {
+    padding: 0.85rem 1rem;
+  }
+}
+}
