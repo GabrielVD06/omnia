@@ -1,25 +1,19 @@
 /**
  * OMNIA Suite - Main Interactive, Routing & Modal Control Script
- * Arquitectura modular, accesible e intencional para maximizar la conversión.
+ * Soporte Multi-Landing (HOST & HOME) con accesibilidad y retroalimentación interactiva.
  */
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // 1. ENRUTAMIENTO DIRECTO Y SIMULACIÓN DE DASHBOARD
+  // 1. ENRUTAMIENTO DIRECTO Y DASHBOARD SIMULADO (OMNIA LANDING)
   // ==========================================================================
   const systemButtons = document.querySelectorAll('.system-card-btn');
 
-  /**
-   * Mapeo de redirección hacia las landings especializadas de producto
-   */
   const systemRoutes = {
     'btn-restaurantes': 'host.html',
     'btn-copropiedades': 'home.html'
   };
 
-  /**
-   * Base de datos local para la simulación de métricas en tiempo real (Fallback)
-   */
   const dashboardData = {
     'btn-restaurantes': {
       ventas: '$12,480',
@@ -43,10 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  /**
-   * Actualiza los datos visuales del dashboard con una transición suave de opacidad
-   * @param {string} systemId - ID del sistema seleccionado
-   */
   const updateDashboardData = (systemId) => {
     const data = dashboardData[systemId];
     if (!data) return;
@@ -54,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dashBody = document.querySelector('.dash-body');
     if (!dashBody) return;
 
-    // Transición de salida fluida para feedback visual
     dashBody.style.opacity = '0.3';
     dashBody.style.transition = 'opacity 0.15s ease-in-out';
 
@@ -76,26 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
         trends[3].textContent = data.tiempoTrend;
       }
 
-      // Restablecer opacidad
       dashBody.style.opacity = '1';
     }, 150);
   };
 
-  /**
-   * Gestor de eventos de interacción en las tarjetas del sistema
-   */
   systemButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       const currentButton = e.currentTarget;
       const systemId = currentButton.id;
 
-      // Prioridad 1: Navegación directa si existe ruta registrada
       if (systemRoutes[systemId]) {
         window.location.href = systemRoutes[systemId];
         return;
       }
 
-      // Prioridad 2: Simulación interactiva local (si no redirige)
       if (currentButton.classList.contains('active')) return;
 
       systemButtons.forEach(btn => btn.classList.remove('active'));
@@ -106,16 +89,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 2. CONTROL ACCESIBLE DEL MODAL DE DEMO EN VIVO (HOST)
+  // 2. CONTROL ACCESIBLE DE MODALES (HOST & HOME)
   // ==========================================================================
   const modal = document.getElementById('demoModal');
   const openButtons = document.querySelectorAll('.open-demo-modal');
   const closeButton = document.getElementById('closeModal');
-  const btnProbarGratis = document.getElementById('btn-probar-gratis-host');
+  
+  // Botones de prueba gratuita aislados (No activan el modal)
+  const btnProbarHost = document.getElementById('btn-probar-gratis-host');
+  const btnProbarHome = document.getElementById('btn-probar-gratis-home');
 
-  /**
-   * Abre la ventana modal y bloquea el scroll del background para evitar desorientación
-   */
   const openModal = (e) => {
     if (e) e.preventDefault();
     if (modal) {
@@ -125,9 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  /**
-   * Cierra el modal y restituye la interacción del documento
-   */
   const closeModal = () => {
     if (modal) {
       modal.classList.remove('active');
@@ -136,31 +116,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Enlazar gatillos exclusivos para abrir la Demo
   openButtons.forEach(btn => btn.addEventListener('click', openModal));
 
-  // Reserva de evento independiente para "Probar HOST Gratis"
-  if (btnProbarGratis) {
-    btnProbarGratis.addEventListener('click', (e) => {
+  if (btnProbarHost) {
+    btnProbarHost.addEventListener('click', (e) => {
       e.preventDefault();
-      // Reservado para la futura funcionalidad personalizada (Trial / Onboarding)
-      console.log('Interacción registrada: Botón "Probar HOST Gratis" presionado.');
+      console.log('Evento registrado: Clic en "Probar HOST Gratis"');
     });
   }
 
-  // Enlazar botón de cierre directo
+  if (btnProbarHome) {
+    btnProbarHome.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('Evento registrado: Clic en "Probar HOME Gratis"');
+    });
+  }
+
   if (closeButton) {
     closeButton.addEventListener('click', closeModal);
   }
 
-  // Cierre por interacción con el fondo (Backdrop)
   if (modal) {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
   }
 
-  // Cierre mediante teclado (Accesibilidad WAI-ARIA)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
       closeModal();
@@ -168,15 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 3. MEJORA DE UX EN FORMULARIO (SUBMIT FEEDBACK)
+  // 3. RETROALIMENTACIÓN DE ENVÍO DE FORMULARIO (HOST / HOME)
   // ==========================================================================
-  const demoForm = document.getElementById('hostDemoForm');
+  const demoForm = document.querySelector('.demo-form');
   if (demoForm) {
-    demoForm.addEventListener('submit', (e) => {
+    demoForm.addEventListener('submit', () => {
       const submitBtn = demoForm.querySelector('.modal-submit-btn');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.7';
+        submitBtn.style.opacity = '0.75';
         submitBtn.innerHTML = '<span>Procesando solicitud...</span>';
       }
     });

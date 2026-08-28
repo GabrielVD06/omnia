@@ -24,7 +24,8 @@
     </nav>
     <div class="nav-actions">
         <a href="C:\repos\omnia\omniaPage.html" class="btn-ghost">OMNIA</a>
-      <button class="btn-primary btn-home">Probar HOME Gratis</button>
+        <!-- Botón de prueba independiente (Sin modal automático) -->
+        <button type="button" class="btn-primary btn-home" id="btn-probar-gratis-home">Probar HOME Gratis</button>
     </div>
   </header>
 
@@ -40,8 +41,9 @@
         </p>
 
         <div class="hero-cta-group">
-          <button class="btn-primary btn-home btn-block">Agendar Demo para Consejo</button>
-          <button class="btn-outline btn-block">Ver Cotización</button>
+          <!-- CTA Principal que dispara el modal de captura -->
+          <button type="button" class="btn-primary btn-home btn-block open-demo-modal" id="btn-demo-home">Agendar Demo para Consejo</button>
+          <button type="button" class="btn-outline btn-block">Ver Cotización</button>
         </div>
 
         <!-- Badges de Beneficios Operativos Clave -->
@@ -111,6 +113,52 @@
       <span>Citofonía en App</span> • <span>Votaciones en Asambleas</span> • <span>Contabilidad Integrada</span> • <span>Pérdidas y Correspondencia</span>
     </div>
   </main>
+
+  <!-- MODAL DE SOLICITUD DE DEMO DE HOME (Adaptado a Esmeralda/Seguridad) -->
+  <div class="modal-overlay" id="demoModal" aria-hidden="true">
+    <div class="modal-container modal-home-accent" role="dialog" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" id="closeModal" aria-label="Cerrar ventana">&times;</button>
+      
+      <div class="modal-header">
+        <h2 id="modalTitle">Agenda una Demo de HOME</h2>
+        <p>Descubre cómo modernizar la gestión de tu copropiedad y reducir la morosidad en minutos.</p>
+      </div>
+
+      <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="demo-form" id="homeDemoForm">
+        <!-- Parámetros de Configuración de FormSubmit -->
+        <input type="hidden" name="_subject" value="🏢 Nueva Solicitud de Demo: HOME Copropiedades">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="Nombre" placeholder="Ej. Ana" required>
+          </div>
+
+          <div class="form-group">
+            <label for="apellidos">Apellidos *</label>
+            <input type="text" id="apellidos" name="Apellidos" placeholder="Ej. Martínez" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Celular / WhatsApp *</label>
+          <input type="tel" id="telefono" name="Celular" placeholder="+57 300 000 0000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico *</label>
+          <input type="email" id="email" name="Email" placeholder="administracion@conjunto.com" required>
+        </div>
+
+        <button type="submit" class="btn-primary btn-home btn-block modal-submit-btn">
+          <span>Agendar Presentación Directa</span>
+        </button>
+
+        <p class="form-privacy-note">🔒 Información 100% confidencial para Consejos y Administradores.</p>
+      </form>
+    </div>
+  </div>
 
 </body>
 </html>
