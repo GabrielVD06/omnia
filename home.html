@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HOME - Gestión Inteligente de Copropiedades y Propiedad Horizontal</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
 </head>
 <body>
 
@@ -23,44 +23,34 @@
       <a href="#ayuda">Soporte</a>
     </nav>
     <div class="nav-actions">
-        <a href="C:\repos\omnia\omniaPage.html" class="btn-ghost">OMNIA</a>
-        <!-- Botón de prueba independiente (Sin modal automático) -->
-        <button type="button" class="btn-primary btn-home" id="btn-probar-gratis-home">Probar HOME Gratis</button>
+      <a href="omniaPage.html" class="btn-ghost">OMNIA</a>
+      <!-- ACTUALIZACIÓN: Se elimina '.open-demo-modal' y se asigna ID independiente para capturar la intención de prueba directa -->
+      <button type="button" class="btn-primary btn-home" id="btn-probar-home-gratis">Probar HOME Gratis</button>
     </div>
   </header>
 
-  <!-- Hero Section Orientado a Administradores de Copropiedades -->
   <main>
     <section class="hero-container">
-      
-      <!-- Copy Persuasivo Enfocado en Reducción de Morosidad y Transparencia -->
       <div class="hero-content">
         <h1 class="hero-title">La administración de tu copropiedad,<br>sin complicaciones</h1>
         <p class="hero-description">
-          Automatiza la recaudo de expensas, gestiona reservas de zonas comunes y mantén a los residentes informados en tiempo real. HOME es la plataforma integral para conjuntos residenciales y edificios inteligentes.
+          Automatiza el recaudo de expensas, gestiona reservas de zonas comunes y mantén a los residentes informados en tiempo real. HOME es la plataforma integral para conjuntos residenciales y edificios inteligentes.
         </p>
 
         <div class="hero-cta-group">
-          <!-- CTA Principal que dispara el modal de captura -->
-          <button type="button" class="btn-primary btn-home btn-block open-demo-modal" id="btn-demo-home">Agendar Demo para Consejo</button>
+          <!-- CTA PRINCIPAL: Mantiene la clase .open-demo-modal para activar la intención de compra consultiva -->
+          <button type="button" class="btn-primary btn-home btn-block open-demo-modal">Agendar Demo para Consejo</button>
           <button type="button" class="btn-outline btn-block">Ver Cotización</button>
         </div>
 
-        <!-- Badges de Beneficios Operativos Clave -->
         <div class="badge-group">
-          <span class="badge-chip chip-home">
-            🛡️ Control de accesos y visitantes
-          </span>
-          <span class="badge-chip chip-home">
-            💳 Pago de administración en línea
-          </span>
-          <span class="badge-chip chip-home">
-            📋 Módulo de PQRS y Mantenimiento
-          </span>
+          <span class="badge-chip chip-home">🛡️ Control de accesos y visitantes</span>
+          <span class="badge-chip chip-home">💳 Pago de administración en línea</span>
+          <span class="badge-chip chip-home">📋 Módulo de PQRS y Mantenimiento</span>
         </div>
       </div>
 
-      <!-- App Showcase: Panel de Control de Copropiedad -->
+      <!-- App Showcase -->
       <div class="hero-preview">
         <div class="dashboard-card border-home">
           <header class="dash-header bg-home-dark">
@@ -90,7 +80,6 @@
               </div>
             </div>
 
-            <!-- Preview de Solicitud de Residente / Mantenimiento -->
             <div class="home-ticket-preview">
               <div class="ticket-header">
                 <strong>Apto 502 — Reserva Zona BBQ</strong>
@@ -101,61 +90,55 @@
                 <li><span>Comprobante de Pago:</span> <strong>Verificado ($50.00)</strong></li>
               </ul>
             </div>
-
           </div>
         </div>
       </div>
-
     </section>
 
-    <!-- Sub-bar de Módulos Destacados -->
     <div class="sub-features-bar">
       <span>Citofonía en App</span> • <span>Votaciones en Asambleas</span> • <span>Contabilidad Integrada</span> • <span>Pérdidas y Correspondencia</span>
     </div>
   </main>
 
-  <!-- MODAL DE SOLICITUD DE DEMO DE HOME (Adaptado a Esmeralda/Seguridad) -->
+  <!-- MODAL DE CAPTURA HOME (Integración Directa para Conversión) -->
   <div class="modal-overlay" id="demoModal" aria-hidden="true">
-    <div class="modal-container modal-home-accent" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-container border-home" role="dialog" aria-labelledby="modalTitle">
       <button type="button" class="modal-close" id="closeModal" aria-label="Cerrar ventana">&times;</button>
       
       <div class="modal-header">
-        <h2 id="modalTitle">Agenda una Demo de HOME</h2>
-        <p>Descubre cómo modernizar la gestión de tu copropiedad y reducir la morosidad en minutos.</p>
+        <h2 id="modalTitle">Comienza a probar HOME Gratis</h2>
+        <p>Ingresa los datos de tu copropiedad para activar tu demo asistida sin compromiso.</p>
       </div>
-
-      <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="demo-form" id="homeDemoForm">
-        <!-- Parámetros de Configuración de FormSubmit -->
-        <input type="hidden" name="_subject" value="🏢 Nueva Solicitud de Demo: HOME Copropiedades">
+  
+      <form action="https://formsubmit.co/tu-correo@dominio.com" method="POST" class="demo-form" id="homeDemoForm">
+        <input type="hidden" name="_subject" value="Nueva Solicitud Demo: HOME Copropiedades">
         <input type="hidden" name="_captcha" value="false">
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nombre">Nombre *</label>
-            <input type="text" id="nombre" name="Nombre" placeholder="Ej. Ana" required>
-          </div>
-
-          <div class="form-group">
-            <label for="apellidos">Apellidos *</label>
-            <input type="text" id="apellidos" name="Apellidos" placeholder="Ej. Martínez" required>
-          </div>
+  
+        <div class="form-group">
+          <label for="nombre">Nombre del Administrador / Consejero *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana María Gómez" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Correo Electrónico Profesional *</label>
+          <input type="email" id="email" name="email" placeholder="admin@torresdelvalle.com" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="telefono">Teléfono / WhatsApp de Contacto *</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" required>
         </div>
 
         <div class="form-group">
-          <label for="telefono">Celular / WhatsApp *</label>
-          <input type="tel" id="telefono" name="Celular" placeholder="+57 300 000 0000" required>
+          <label for="unidades">Número de Unidades / Aptos</label>
+          <input type="number" id="unidades" name="unidades" placeholder="Ej. 120">
         </div>
-
-        <div class="form-group">
-          <label for="email">Correo Electrónico *</label>
-          <input type="email" id="email" name="Email" placeholder="administracion@conjunto.com" required>
-        </div>
-
+  
         <button type="submit" class="btn-primary btn-home btn-block modal-submit-btn">
-          <span>Agendar Presentación Directa</span>
+          <span>Solicitar Acceso Inmediato</span>
         </button>
-
-        <p class="form-privacy-note">🔒 Información 100% confidencial para Consejos y Administradores.</p>
+  
+        <p class="form-privacy-note">🔒 Garantía de privacidad. Datos protegidos mediante cifrado.</p>
       </form>
     </div>
   </div>

@@ -1,0 +1,269 @@
+/* ==========================================================================
+   OMNIA CORE STYLES
+   ========================================================================== */
+:root {
+  --primary-gradient: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+  --blue-dark: #0F172A;
+  --blue-brand: #0072FF;
+  --text-muted: #475569;
+  --bg-light: #F8FAFC;
+  --card-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  --border-color: #E2E8F0;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--blue-dark);
+  background-color: #FFFFFF;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Nav */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  letter-spacing: -0.03em;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Sub-navegación estilo texto tradicional para módulos */
+.nav-actions .btn-ghost {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.nav-actions .btn-ghost:hover {
+  color: var(--blue-brand);
+}
+
+/* Componentes Botones */
+.btn-primary {
+  background: var(--primary-gradient);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--blue-dark);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-light);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Layout Hero */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1.25rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #EFF6FF;
+  color: var(--blue-brand);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Dashboard Showcase */
+.dashboard-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.dash-header {
+  background: #0B132B;
+  color: #FFFFFF;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.dash-body {
+  padding: 1.25rem;
+  background-color: var(--bg-light);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Enlaces de tarjeta de productos en OMNIA */
+a.system-card-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1.125rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a.system-card-btn:hover {
+  transform: translateY(-2px);
+  border-color: #06B6D4;
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.12);
+}
+
+.system-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.system-title {
+  font-size: 1.05rem;
+  color: var(--blue-dark);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sub-features-bar {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+}
+
+/* Adaptación Desktop */
+@media (min-width: 1024px) {
+  .nav-links { display: flex; gap: 1.8rem; }
+  .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--blue-brand); }
+  .hero-container { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: center; padding: 4.5rem 2rem; }
+  .hero-title { font-size: 3.25rem; }
+  .hero-cta-group { flex-direction: row; max-width: 420px; }
+  .btn-block { width: auto; }
+}

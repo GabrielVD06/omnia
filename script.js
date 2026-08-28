@@ -1,11 +1,10 @@
 /**
- * OMNIA Suite - Main Interactive, Routing & Modal Control Script
- * Soporte Multi-Landing (HOST & HOME) con accesibilidad y retroalimentación interactiva.
+ * OMNIA Suite - Script Principal de Interacción, Enrutamiento y Modales CRO
  */
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // 1. ENRUTAMIENTO DIRECTO Y DASHBOARD SIMULADO (OMNIA LANDING)
+  // 1. ENRUTAMIENTO DINÁMICO Y DASHBOARD
   // ==========================================================================
   const systemButtons = document.querySelectorAll('.system-card-btn');
 
@@ -14,123 +13,46 @@ document.addEventListener('DOMContentLoaded', () => {
     'btn-copropiedades': 'home.html'
   };
 
-  const dashboardData = {
-    'btn-restaurantes': {
-      ventas: '$12,480',
-      ventasTrend: '↑ +14.2% vs ayer',
-      pedidos: '18',
-      pedidosSub: '5 en cocina • 8 listos',
-      ocupacion: '12/20',
-      ocupacionSub: '60% de ocupación',
-      tiempo: '22 min',
-      tiempoTrend: '↓ -3 min vs semana'
-    },
-    'btn-copropiedades': {
-      ventas: '$45,800',
-      ventasTrend: '↑ +8.5% este mes',
-      pedidos: '142',
-      pedidosSub: '12 pendientes • 130 al día',
-      ocupacion: '85/90',
-      ocupacionSub: '94% unidades habitadas',
-      tiempo: '15 min',
-      tiempoTrend: '↓ -5 min por solicitud'
-    }
-  };
-
-  const updateDashboardData = (systemId) => {
-    const data = dashboardData[systemId];
-    if (!data) return;
-
-    const dashBody = document.querySelector('.dash-body');
-    if (!dashBody) return;
-
-    dashBody.style.opacity = '0.3';
-    dashBody.style.transition = 'opacity 0.15s ease-in-out';
-
-    setTimeout(() => {
-      const values = dashBody.querySelectorAll('.metric-value');
-      const trends = dashBody.querySelectorAll('.metric-trend, .metric-sub');
-
-      if (values.length >= 4) {
-        values[0].textContent = data.ventas;
-        values[1].textContent = data.pedidos;
-        values[2].textContent = data.ocupacion;
-        values[3].textContent = data.tiempo;
-      }
-
-      if (trends.length >= 4) {
-        trends[0].textContent = data.ventasTrend;
-        trends[1].textContent = data.pedidosSub;
-        trends[2].textContent = data.ocupacionSub;
-        trends[3].textContent = data.tiempoTrend;
-      }
-
-      dashBody.style.opacity = '1';
-    }, 150);
-  };
-
   systemButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       const currentButton = e.currentTarget;
       const systemId = currentButton.id;
 
-      if (systemRoutes[systemId]) {
+      if (systemRoutes[systemId] && currentButton.tagName !== 'A') {
         window.location.href = systemRoutes[systemId];
-        return;
       }
-
-      if (currentButton.classList.contains('active')) return;
-
-      systemButtons.forEach(btn => btn.classList.remove('active'));
-      currentButton.classList.add('active');
-
-      updateDashboardData(systemId);
     });
   });
 
+
   // ==========================================================================
-  // 2. CONTROL ACCESIBLE DE MODALES (HOST & HOME)
+  // 2. CONTROL CONTROLADO DE MODAL (ACCESIBILIDAD Y CRO)
   // ==========================================================================
   const modal = document.getElementById('demoModal');
   const openButtons = document.querySelectorAll('.open-demo-modal');
   const closeButton = document.getElementById('closeModal');
-  
-  // Botones de prueba gratuita aislados (No activan el modal)
-  const btnProbarHost = document.getElementById('btn-probar-gratis-host');
-  const btnProbarHome = document.getElementById('btn-probar-gratis-home');
 
-  const openModal = (e) => {
-    if (e) e.preventDefault();
-    if (modal) {
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
+  const openModal = () => {
+    if (!modal) return;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
-    if (modal) {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   };
 
-  openButtons.forEach(btn => btn.addEventListener('click', openModal));
-
-  if (btnProbarHost) {
-    btnProbarHost.addEventListener('click', (e) => {
+  // Asignar evento a todos los botones con la clase de apertura
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
-      console.log('Evento registrado: Clic en "Probar HOST Gratis"');
+      openModal();
     });
-  }
-
-  if (btnProbarHome) {
-    btnProbarHome.addEventListener('click', (e) => {
-      e.preventDefault();
-      console.log('Evento registrado: Clic en "Probar HOME Gratis"');
-    });
-  }
+  });
 
   if (closeButton) {
     closeButton.addEventListener('click', closeModal);
@@ -148,18 +70,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
   // ==========================================================================
-  // 3. RETROALIMENTACIÓN DE ENVÍO DE FORMULARIO (HOST / HOME)
+  // 3. RETROALIMENTACIÓN DE FORMULARIOS (FEEDBACK VISUAL CRO)
   // ==========================================================================
-  const demoForm = document.querySelector('.demo-form');
-  if (demoForm) {
-    demoForm.addEventListener('submit', () => {
-      const submitBtn = demoForm.querySelector('.modal-submit-btn');
+  const forms = document.querySelectorAll('.demo-form');
+
+  forms.forEach(form => {
+    form.addEventListener('submit', function () {
+      const submitBtn = this.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.75';
-        submitBtn.innerHTML = '<span>Procesando solicitud...</span>';
+        submitBtn.innerHTML = '<span>Procesando Solicitud...</span>';
       }
+    });
+  });
+
+  // ==========================================================================
+  // 4. FLUJO INDEPENDIENTE PARA "PROBAR GRATIS"
+  // ==========================================================================
+  // Esta lógica captura al usuario que desea probar por su cuenta,
+  // separándolo del flujo de venta consultiva (Agendar Demo).
+  const btnProbarGratisHome = document.getElementById('btn-probar-home-gratis');
+
+  if (btnProbarGratisHome) {
+    btnProbarGratisHome.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Aquí puedes colocar la redirección hacia tu vista de registro o trial
+      // Ejemplo: window.location.href = 'registro-free-trial.html';
+      
+      // Feedback temporal de consola para asegurar que funciona correctamente
+      console.log('Navegando hacia el flujo de prueba gratuita de HOME...');
+      alert('Se iniciará el proceso de registro para la prueba gratuita.');
     });
   }
 
