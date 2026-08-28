@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOST - Sistema Punto de Venta y Gestión para Restaurantes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Navegación Adaptada a la Marca HOST -->
+    <header class="navbar">
+      <div class="brand">
+        <img src="imagenes/host.jpeg" alt="Logo de HOST Restaurantes" class="logo-img">
+        <h1 class="brand-name">HOST</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="#comandas">Comandas Digitales</a>
+        <a href="#inventarios">Inventario</a>
+        <a href="#mesas">Control de Mesas</a>
+        <a href="#precios">Planes</a>
+        <a href="#ayuda">Soporte</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="C:\repos\omnia\omniaPage.html" class="btn-ghost">OMNIA</a>
+        <!-- CORRECCIÓN: Se remueve '.open-demo-modal' y se asigna un ID independiente -->
+        <button type="button" class="btn-primary btn-host" id="btn-probar-gratis-host">Probar HOST Gratis</button>
+      </div>
+    </header>
+    
+    <main>
+      <section class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">Optimiza el servicio<br>de tu restaurante</h1>
+          <p class="hero-description">
+            Toma comandas al instante, automatiza el envío a cocina y controla tus inventarios por receta en tiempo real. HOST es la plataforma diseñada para elevar la rotación de mesas y acelerar tus ventas.
+          </p>
+    
+          <div class="hero-cta-group">
+            <!-- ÚNICO BOTÓN PRINCIPAL ACTIVADOR DEL MODAL DE DEMO -->
+            <button type="button" class="btn-primary btn-host btn-block open-demo-modal" id="btn-demo-host">Solicitar Demo en Vivo</button>
+            <button type="button" class="btn-outline btn-block">Ver Planes</button>
+          </div>
+
+        <div class="badge-group">
+          <span class="badge-chip chip-host"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Comandas a cocina en < 3 seg</span>
+          <span class="badge-chip chip-host">🍽️ Plano interactivo de mesas</span>
+          <span class="badge-chip chip-host">📊 Mermas e insumos en línea</span>
+        </div>
+      </div>
+
+      <!-- App Showcase -->
+      <div class="hero-preview">
+        <div class="dashboard-card border-host">
+          <header class="dash-header bg-host-dark">
+            <div class="dash-brand">
+              <span class="dash-logo-symbol">👨‍🍳</span>
+              <span>HOST POS — Salón Principal</span>
+            </div>
+            <div class="dash-profile">
+              <span class="status-online">● En línea</span>
+              <span>Turno Noche</span>
+            </div>
+          </header>
+
+          <div class="dash-body">
+            <p class="dash-date">Métricas de Servicio del Día</p>
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <span class="metric-label">Ventas del Día</span>
+                <span class="metric-value">$3,420</span>
+                <span class="status-up">↑ +18% esta semana</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Comandas Activas</span>
+                <span class="metric-value">12 Mesas</span>
+                <span class="metric-sub">4 en preparación</span>
+              </div>
+            </div>
+
+            <div class="host-order-preview">
+              <div class="order-header">
+                <strong>Mesa 04 — Comanda #108</strong>
+                <span class="status-pill orange">En Cocina</span>
+              </div>
+              <ul class="host-items-list">
+                <li><span>2x Hamburguesa Draft (300g)</span> <strong>$32.00</strong></li>
+                <li><span>1x Cerveza Artesanal IPA</span> <strong>$7.00</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="sub-features-bar">
+      <span>Comandero Móvil</span> • <span>Facturación Electrónica POS</span> • <span>Recetario Estándar</span> • <span>Integración con Delivery</span>
+    </div>
+  </main>
+  <!-- MODAL DE SOLICITUD DE DEMO EN VIVO (Formulario de Envío Directo) -->
+  <div class="modal-overlay" id="demoModal" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" id="closeModal" aria-label="Cerrar ventana">&times;</button>
+      
+      <div class="modal-header">
+        <h2 id="modalTitle">Solicita tu Demo en Vivo de HOST</h2>
+        <p>Completa tus datos para agendar una sesión personalizada adaptada a tu restaurante.</p>
+      </div>
+  
+      <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="demo-form" id="hostDemoForm">
+        <input type="hidden" name="_subject" value="Nueva Solicitud de Demo: HOST Restaurantes">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="Nombre" placeholder="Ej. Carlos" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="apellidos">Apellidos *</label>
+            <input type="text" id="apellidos" name="Apellidos" placeholder="Ej. Mendoza" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="telefono">Celular / WhatsApp *</label>
+          <input type="tel" id="telefono" name="Celular" placeholder="+57 300 000 0000" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Correo Electrónico *</label>
+          <input type="email" id="email" name="Email" placeholder="carlos@turestaurante.com" required>
+        </div>
+  
+        <button type="submit" class="btn-primary btn-host btn-block modal-submit-btn">
+          <span>Enviar y Agendar Demo</span>
+        </button>
+  
+        <p class="form-privacy-note">🔒 Tus datos están protegidos. Sin spam.</p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
