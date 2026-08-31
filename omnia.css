@@ -267,3 +267,290 @@ a.system-card-btn:hover {
   .hero-cta-group { flex-direction: row; max-width: 420px; }
   .btn-block { width: auto; }
 }
+/* ==========================================================================
+   ANIMACIONES DE SCROLL Y MICROINTERACCIONES (OMNIA CORE)
+   ========================================================================== */
+
+/* Transición suave global para el desplazamiento */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Efecto de sombra dinámica en el Navbar al hacer scroll */
+.navbar.navbar-scrolled {
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+/* Clase base para elementos animables al hacer scroll */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Estado visible al entrar en el Viewport */
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Retardo escalonado para tarjetas o elementos agrupados */
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+/* Microinteracción visual para captar la atención en los CTAs */
+.pulse-cta {
+  animation: subtlePulse 3s infinite ease-in-out;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(0, 114, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 22px rgba(0, 198, 255, 0.65);
+    transform: translateY(-1px);
+  }
+}
+
+/* ==========================================================================
+   ESTILOS ADICIONALES DE SECCIONES Y ANIMACIONES SCROLL
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+.content-section {
+  padding: 4.5rem 1.25rem;
+}
+
+.bg-alt {
+  background-color: var(--bg-light);
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  color: var(--blue-brand);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin-top: 0.25rem;
+}
+
+.cards-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cards-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.info-card, .solution-highlight-card {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+.solution-highlight-card h3 {
+  margin: 0.75rem 0;
+  font-size: 1.35rem;
+}
+
+.solution-highlight-card p {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.metrics-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .metrics-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-card {
+  background: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--blue-brand);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  background: #FFFFFF;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+@media (min-width: 1024px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faq-answer {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+}
+
+.main-footer {
+  text-align: center;
+  padding: 2rem 1.25rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Scroll Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+
+.pulse-cta {
+  animation: subtlePulse 3s infinite ease-in-out;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 4px 14px rgba(0, 114, 255, 0.3); }
+  50% { box-shadow: 0 6px 22px rgba(0, 198, 255, 0.6); transform: translateY(-1px); }
+}
+/* ==========================================================================
+   ANIMACIONES DE SCROLL Y MICROINTERACCIONES (FALLBACK SEGURO)
+   ========================================================================== */
+
+/* Suavidad en el scroll global */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estado por defecto: Elementos visibles para garantizar accesibilidad */
+.reveal-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Solo si JavaScript está habilitado, preparamos el elemento para animar */
+.js-enabled .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
+}
+
+/* Estado animado al entrar en pantalla */
+.js-enabled .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Retardos escalonados para tarjetas */
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+/* Microinteracción de llamado a la acción */
+.pulse-cta {
+  animation: subtlePulse 3s infinite ease-in-out;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(0, 114, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 22px rgba(0, 198, 255, 0.65);
+    transform: translateY(-1px);
+  }
+}

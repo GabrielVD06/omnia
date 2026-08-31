@@ -9,41 +9,39 @@
 </head>
 <body>
 
-  <!-- Navegación Superior Alineada -->
+  <!-- Navegación Superior -->
   <header class="navbar">
-    <div class="brand">
-      <img src="imagenes/logoomnia.png" alt="Logo de OMNIA Software" class="logo-img"><h1 class="brand-name">OMNIA</h1>
-    </div>
+    <a href="#" class="brand">
+      <img src="imagenes/logoomnia.png" alt="Logo de OMNIA Software" class="logo-img">
+      <h1 class="brand-name">OMNIA</h1>
+    </a>
     <nav class="nav-links">
-      <a href="#features">Características</a>
-      <a href="#pricing">Precios</a>
-      <a href="#integrations">Integraciones</a>
-      <a href="#resources">Recursos</a>
+      <a href="#missionyvision">Misión y Visión</a>
+      <a href="#solutions">Soluciones</a>
+      <a href="#whoweare">¿Quiénes Somos?</a>
+      <a href="#whatwedo">Contacto</a>
       <a href="#help">Ayuda</a>
     </nav>
     <div class="nav-actions">
-      <button class="btn-ghost">Iniciar sesión</button>
-      <button class="btn-primary">Probar gratis</button>
+      <button type="button" class="btn-ghost">Iniciar sesión</button>
+      <a href="#whatwedo" class="btn-primary pulse-cta">Probar gratis</a>
     </div>
   </header>
 
-  <!-- Hero Section Dividida (Grid de 2 Columnas) -->
   <main>
+    <!-- Hero Section -->
     <section class="hero-container">
-      
-      <!-- Columna Izquierda: Copy + CTAs + Chips -->
-      <div class="hero-content">
+      <div class="hero-content reveal-on-scroll">
         <h1 class="hero-title">Tu software<br>en un solo lugar</h1>
         <p class="hero-description">
-          Visualización, diseño, creación e implementación de software, con un enfoque en la eficiencia y la experiencia del usuario. OMNIA es la solución integral para la gestión de tus servicios, de forma eficiente e inteligente.
+          Visualización, diseño, creación e implementación de software con un enfoque en la eficiencia y la experiencia del usuario. OMNIA es la solución integral para la gestión de tus servicios.
         </p>
 
         <div class="hero-cta-group">
-          <button class="btn-primary btn-block">Innovación IA</button>
-          <button class="btn-outline btn-block">Contáctanos</button>
+          <a href="#solutions" class="btn-primary btn-block pulse-cta">Explorar Soluciones</a>
+          <a href="#whatwedo" class="btn-outline btn-block">Contáctanos</a>
         </div>
 
-        <!-- Badges de Confianza / Features Rápido -->
         <div class="badge-group">
           <span class="badge-chip">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -60,8 +58,8 @@
         </div>
       </div>
 
-      <!-- Columna Derecha: UI Showcase / App Preview -->
-      <div class="hero-preview">
+      <!-- UI Showcase -->
+      <div class="hero-preview reveal-on-scroll reveal-delay-1">
         <div class="dashboard-card">
           <header class="dash-header">
             <div class="dash-brand">
@@ -69,41 +67,168 @@
               <span>OMNIA — Nuestros sistemas</span>
             </div>
             <div class="dash-profile">
-              <span class="profile-avatar"></span>
-              <span>John Doe</span>
+              <span class="status-online">● En línea</span>
             </div>
           </header>
 
           <div class="dash-body">
-            <p class="dash-date">Sistemas de gestión</p>
+            <p class="dash-date">Sistemas de gestión especializados</p>
 
             <div class="metrics-grid">
-              <!-- Botón Sistema 1: Restaurantes -->
               <a href="host.html" class="system-card-btn" id="btn-restaurantes">
                 <span class="system-label">Host</span>
                 <strong class="system-title">Restaurantes</strong>
               </a>
             
-              <!-- Botón Sistema 1: Restaurantes -->
-              <a href="home.html" class="system-card-btn" id="btn-restaurantes">
+              <a href="home.html" class="system-card-btn" id="btn-copropiedades">
                 <span class="system-label">Home</span>
                 <strong class="system-title">Copropiedades</strong>
               </a>
-
-              </div>
-            </div>
             </div>
           </div>
         </div>
       </div>
-
     </section>
 
-    <!-- Sub-bar de Integraciones -->
-    <div class="sub-features-bar">
+    <!-- Sub-bar -->
+    <div class="sub-features-bar reveal-on-scroll">
       <span>OMNIA POS</span> • <span>Métodos eficientes</span> • <span>Innovación y desarrollo</span> • <span>Reportes avanzados</span>
     </div>
+
+    <!-- Misión y Visión -->
+    <section id="missionyvision" class="content-section">
+      <div class="section-container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Nuestra Filosofía</span>
+          <h2 class="section-title">Ingeniería enfocada en la productividad y la experiencia</h2>
+        </div>
+
+        <div class="cards-grid-2">
+          <article class="info-card reveal-on-scroll reveal-delay-1">
+            <div class="card-icon-wrapper">🚀</div>
+            <h3>Nuestra Misión</h3>
+            <p>Proporcionar ecosistemas de software intuitivos y robustos que reduzcan la fricción operativa, permitiendo a las organizaciones enfocarse en escalar su negocio.</p>
+          </article>
+
+          <article class="info-card reveal-on-scroll reveal-delay-2">
+            <div class="card-icon-wrapper">🎯</div>
+            <h3>Nuestra Visión</h3>
+            <p>Liderar el mercado de soluciones operativas horizontales y verticales, estableciendo el estándar de oro en usabilidad, velocidad y soporte técnico.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soluciones -->
+    <section id="solutions" class="content-section bg-alt">
+      <div class="section-container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Ecosistema de Productos</span>
+          <h2 class="section-title">Soluciones diseñadas para industrias clave</h2>
+        </div>
+
+        <div class="cards-grid-2">
+          <div class="solution-highlight-card border-host-accent reveal-on-scroll reveal-delay-1">
+            <span class="badge-chip chip-host">Gastronomía & POS</span>
+            <h3>HOST — Restaurantes</h3>
+            <p>Control total de comandas, recetario estándar y rotación de mesas a velocidad récord.</p>
+            <a href="host.html" class="btn-primary btn-host">Ver HOST Restaurantes →</a>
+          </div>
+
+          <div class="solution-highlight-card border-home-accent reveal-on-scroll reveal-delay-2">
+            <span class="badge-chip chip-home">Propiedad Horizontal</span>
+            <h3>HOME — Copropiedades</h3>
+            <p>Gestión automatizada de expensas, control de accesos y citofonía virtual en tiempo real.</p>
+            <a href="home.html" class="btn-primary btn-home">Ver HOME Copropiedades →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿Quiénes Somos? -->
+    <section id="whoweare" class="content-section">
+      <div class="section-container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Confianza & Resultados</span>
+          <h2 class="section-title">Desarrollado con arquitectura de alta disponibilidad</h2>
+        </div>
+
+        <div class="metrics-stats-grid reveal-on-scroll">
+          <div class="stat-card">
+            <span class="stat-number">+99.9%</span>
+            <span class="stat-label">Uptime Garantizado</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3x</span>
+            <span class="stat-label">Mayor Rapidez en Procesos</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">+500</span>
+            <span class="stat-label">Empresas Conectadas</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Monitoreo y Soporte</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="whatwedo" class="content-section bg-alt">
+      <div class="section-container">
+        <div class="contact-wrapper reveal-on-scroll">
+          <div class="contact-info">
+            <span class="section-subtitle">¿Tienes un proyecto en mente?</span>
+            <h2 class="section-title">Impulsa tu infraestructura hoy mismo</h2>
+            <p>Solicita una demostración asistida y descubre cómo OMNIA se adapta a tus necesidades operativas.</p>
+          </div>
+
+          <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="contact-form">
+            <input type="hidden" name="_subject" value="Nueva Solicitud OMNIA">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-group">
+              <label for="c-name">Nombre completo *</label>
+              <input type="text" id="c-name" name="Nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-group">
+              <label for="c-email">Correo Electrónico *</label>
+              <input type="email" id="c-email" name="Email" placeholder="correo@empresa.com" required>
+            </div>
+
+            <button type="submit" class="btn-primary btn-block pulse-cta">Solicitar Información</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ayuda -->
+    <section id="help" class="content-section">
+      <div class="section-container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle">Soporte Técnico</span>
+          <h2 class="section-title">Preguntas Frecuentes</h2>
+        </div>
+
+        <div class="faq-accordion reveal-on-scroll">
+          <details class="faq-item">
+            <summary class="faq-question">¿Cómo se realiza la integración de los sistemas?</summary>
+            <div class="faq-answer">
+              <p>Nuestra plataforma es totalmente basada en la nube y se despliega de inmediato sin necesidad de instalar servidores locales.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 OMNIA Suite. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
