@@ -24,7 +24,7 @@
     </nav>
     <div class="nav-actions">
       <button type="button" class="btn-ghost">Iniciar sesión</button>
-      <a href="#whatwedo" class="btn-primary pulse-cta">Probar gratis</a>
+      <a href="#whatwedo" class="btn-primary">Probar gratis</a>
     </div>
   </header>
 
@@ -38,7 +38,7 @@
         </p>
 
         <div class="hero-cta-group">
-          <a href="#solutions" class="btn-primary btn-block pulse-cta">Explorar Soluciones</a>
+          <a href="#solutions" class="btn-primary btn-block">Explorar Soluciones</a>
           <a href="#whatwedo" class="btn-outline btn-block">Contáctanos</a>
         </div>
 
@@ -146,79 +146,86 @@
     </section>
 
     <!-- ¿Quiénes Somos? -->
-    <section id="whoweare" class="content-section">
-      <div class="section-container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-subtitle">Confianza & Resultados</span>
-          <h2 class="section-title">Desarrollado con arquitectura de alta disponibilidad</h2>
-        </div>
-
-        <div class="metrics-stats-grid reveal-on-scroll">
-          <div class="stat-card">
-            <span class="stat-number">+99.9%</span>
-            <span class="stat-label">Uptime Garantizado</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">3x</span>
-            <span class="stat-label">Mayor Rapidez en Procesos</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">+500</span>
-            <span class="stat-label">Empresas Conectadas</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">24/7</span>
-            <span class="stat-label">Monitoreo y Soporte</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contacto -->
+    <!-- Sección de Contacto Mejorada -->
     <section id="whatwedo" class="content-section bg-alt">
       <div class="section-container">
-        <div class="contact-wrapper reveal-on-scroll">
+        <div class="contact-card-grid reveal-on-scroll">
+          
+          <!-- Columna Izquierda: Mensaje Comercial -->
           <div class="contact-info">
-            <span class="section-subtitle">¿Tienes un proyecto en mente?</span>
+            <span class="badge-tag">¿TIENES UN PROYECTO EN MENTE?</span>
             <h2 class="section-title">Impulsa tu infraestructura hoy mismo</h2>
-            <p>Solicita una demostración asistida y descubre cómo OMNIA se adapta a tus necesidades operativas.</p>
+            <p class="section-description">
+              Solicita una demostración asistida y descubre cómo <strong>OMNIA</strong> se adapta a tus necesidades operativas para escalar tu negocio.
+            </p>
+            
+            <ul class="value-bullets">
+              <li>✔ Asistencia personalizada en menos de 24 horas</li>
+              <li>✔ Implementación rápida y 100% en la nube</li>
+              <li>✔ Integración garantizada con tus sistemas actuales</li>
+            </ul>
           </div>
+    
+          <!-- Columna Derecha: Tarjeta Elevada de Captura -->
+          <div class="contact-card">
+            <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="contact-form" id="omniaContactForm">
+              <input type="hidden" name="_subject" value="Nueva Solicitud OMNIA">
+              <input type="hidden" name="_captcha" value="false">
+            
+              <h3 class="form-title">Solicitar Demostración</h3>
+            
+              <!-- Campo Nombre Completo: Límite 50 caracteres -->
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="c-name">Nombre completo *</label>
+                </div>
+                <input 
+                  type="text" 
+                  id="c-name" 
+                  name="Nombre" 
+                  placeholder="Ej. Carlos Mendoza" 
+                  required
+                >
+              </div>
+            
+              <!-- Campo Correo Electrónico: Límite 60 caracteres -->
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="c-email">Correo Electrónico *</label>
+                </div>
+                <input 
+                  type="email" 
+                  id="c-email" 
+                  name="Email" 
+                  placeholder="correo@empresa.com" 
+                  required
+                >
+              </div>
 
-          <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="contact-form">
-            <input type="hidden" name="_subject" value="Nueva Solicitud OMNIA">
-            <input type="hidden" name="_captcha" value="false">
-
-            <div class="form-group">
-              <label for="c-name">Nombre completo *</label>
-              <input type="text" id="c-name" name="Nombre" placeholder="Tu nombre" required>
-            </div>
-
-            <div class="form-group">
-              <label for="c-email">Correo Electrónico *</label>
-              <input type="email" id="c-email" name="Email" placeholder="correo@empresa.com" required>
-            </div>
-
-            <button type="submit" class="btn-primary btn-block pulse-cta">Solicitar Información</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ayuda -->
-    <section id="help" class="content-section">
-      <div class="section-container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-subtitle">Soporte Técnico</span>
-          <h2 class="section-title">Preguntas Frecuentes</h2>
-        </div>
-
-        <div class="faq-accordion reveal-on-scroll">
-          <details class="faq-item">
-            <summary class="faq-question">¿Cómo se realiza la integración de los sistemas?</summary>
-            <div class="faq-answer">
-              <p>Nuestra plataforma es totalmente basada en la nube y se despliega de inmediato sin necesidad de instalar servidores locales.</p>
-            </div>
-          </details>
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="c-description">Descripción *</label>
+                  <small class="char-counter"><span id="descriptionCount">0</span>/150</small>
+                </div>
+                <input 
+                  type="text" 
+                  id="c-description" 
+                  name="Descripción" 
+                  placeholder="Cuéntanos sobre tu proyecto..." 
+                  maxlength="150" 
+                  required
+                >
+              </div>
+            
+              <button type="submit" class="btn-primary btn-block pulse-cta">
+                <span>Solicitar Información</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            
+              <p class="privacy-text">🔒 Respetamos tu privacidad. Cero spam.</p>
+            </form>
+          </div>
+    
         </div>
       </div>
     </section>

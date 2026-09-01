@@ -59,3 +59,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
   elementsToReveal.forEach(el => revealObserver.observe(el));
 });
+/**
+ * OMNIA Suite - Restricción de Caracteres y Retroalimentación UX
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // Función reutilizable para gestionar el conteo y límites de input
+  const setupCharacterLimit = (inputId, counterId, maxLength) => {
+    const inputField = document.getElementById(inputId);
+    const counterDisplay = document.getElementById(counterId);
+
+    if (!inputField || !counterDisplay) return;
+
+    inputField.addEventListener('input', (e) => {
+      let currentLength = e.target.value.length;
+
+      // Truncado estricto por seguridad en cliente
+      if (currentLength > maxLength) {
+        e.target.value = e.target.value.slice(0, maxLength);
+        currentLength = maxLength;
+      }
+
+      // Actualizar contador
+      counterDisplay.textContent = currentLength;
+
+      // Estado visual cuando se alcanza el límite máximo
+      if (currentLength >= maxLength) {
+        inputField.classList.add('limit-reached');
+      } else {
+        inputField.classList.remove('limit-reached');
+      }
+    });
+  };
+
+  // Inicialización exclusiva para el formulario final de OMNIA
+  setupCharacterLimit('c-description', 'descriptionCount', 150);
+
+});
