@@ -95,4 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicialización exclusiva para el formulario final de OMNIA
   setupCharacterLimit('c-description', 'descriptionCount', 150);
 
+  // Agregar este bloque dentro del DOMContentLoaded en host.js
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const navbarHeight = document.querySelector('.navbar').offsetHeight || 70;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
 });

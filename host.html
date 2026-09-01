@@ -9,48 +9,59 @@
 </head>
 <body>
 
-    <!-- Navegación Adaptada a la Marca HOST -->
-    <header class="navbar">
-      <div class="brand">
-        <img src="imagenes/host.png" alt="Logo de HOST Restaurantes" class="logo-img">
-        <h1 class="brand-name">HOST</h1>
-      </div>
-      <nav class="nav-links">
-        <a href="#comandas">Comandas Digitales</a>
-        <a href="#solutions">Soluciones</a>
-        <a href="#mesas">Funciones</a>
-        <a href="#precios">Planes</a>
-        <a href="#ayuda">Ayuda</a>
-      </nav>
-      <div class="nav-actions">
-        <a href="omniaPage.html" class="btn-ghost">OMNIA</a>
-        <!-- CORRECCIÓN: Se remueve '.open-demo-modal' y se asigna un ID independiente -->
-        <button type="button" class="btn-primary btn-host" id="btn-probar-gratis-host">Probar HOST Gratis</button>
-      </div>
-    </header>
-    
-    <main>
-      <section class="hero-container">
-        <div class="hero-content">
-          <h1 class="hero-title">Optimiza el servicio<br>de tu restaurante</h1>
-          <p class="hero-description">
-            Toma comandas al instante, automatiza el envío a cocina y controla tus inventarios por receta en tiempo real. HOST es la plataforma diseñada para elevar la rotación de mesas y acelerar tus ventas.
-          </p>
-    
-          <div class="hero-cta-group">
-            <!-- ÚNICO BOTÓN PRINCIPAL ACTIVADOR DEL MODAL DE DEMO -->
-            <button type="button" class="btn-primary btn-host btn-block open-demo-modal" id="btn-demo-host">Solicitar Demo en Vivo</button>
-            <button type="button" class="btn-outline btn-block">Ver Planes</button>
-          </div>
+  <!-- Navegación Principal -->
+  <header class="navbar">
+    <div class="brand">
+      <img src="imagenes/host.png" alt="Logo de HOST Restaurantes" class="logo-img">
+      <h1 class="brand-name">HOST</h1>
+    </div>
+    <nav class="nav-links">
+      <a href="#comandas">Comandas Digitales</a>
+      <a href="#soluciones">Soluciones</a>
+      <a href="#funciones">Funciones</a>
+      <a href="#planes">Planes</a>
+      <a href="#ayuda">Ayuda</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="omniaPage.html" class="btn-ghost">OMNIA</a>
+      <button 
+        type="button" 
+        class="btn-primary btn-host" 
+        id="btn-probar-gratis-host"
+        aria-label="Abrir inicio de sesión en ventana externa"
+      >
+        Probar HOST Gratis
+      </button>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">Optimiza el servicio<br>de tu restaurante</h1>
+        <p class="hero-description">
+          Toma comandas al instante, automatiza el envío a cocina y controla tus inventarios por receta en tiempo real. HOST es la plataforma diseñada para elevar la rotación de mesas y acelerar tus ventas.
+        </p>
+  
+        <div class="hero-cta-group">
+          <button type="button" class="btn-primary btn-host btn-block open-demo-modal" id="btn-demo-host">Solicitar Demo en Vivo</button>
+          <button type="button" class="btn-outline btn-block">Ver Planes</button>
+        </div>
 
         <div class="badge-group">
-          <span class="badge-chip chip-host"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Comandas a cocina en < 3 seg</span>
+          <span class="badge-chip chip-host">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> 
+            Comandas a cocina en &lt; 3 seg
+          </span>
           <span class="badge-chip chip-host">🍽️ Plano interactivo de mesas</span>
           <span class="badge-chip chip-host">📊 Mermas e insumos en línea</span>
         </div>
       </div>
 
-      <!-- App Showcase -->
+      <!-- Preview de la App -->
       <div class="hero-preview">
         <div class="dashboard-card border-host">
           <header class="dash-header bg-host-dark">
@@ -92,14 +103,149 @@
           </div>
         </div>
       </div>
-
     </section>
 
-    <div class="sub-features-bar">
+    <!-- Sub-Barra de Funcionalidades -->
+    <div id="funciones" class="sub-features-bar">
       <span>Comandero Móvil</span> • <span>Facturación Electrónica POS</span> • <span>Recetario Estándar</span> • <span>Integración con Delivery</span>
     </div>
+
+    <!-- 1. Módulos y Funciones Principales -->
+    <section id="comandas" class="content-section bg-alt reveal-on-scroll">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">Funcionalidades Especializadas</span>
+          <h2 class="section-title">Diseñado para la velocidad y precisión de tu cocina</h2>
+        </div>
+
+        <div class="cards-grid-2">
+          <article class="info-card reveal-on-scroll reveal-delay-1">
+            <div class="card-icon-wrapper">📱</div>
+            <h3>Comandero Móvil para Meseros</h3>
+            <p>Elimina errores de comanda en papel. Envía los pedidos directamente desde smartphones o tablets a la impresora de cocina o pantalla KDS en menos de 3 segundos.</p>
+          </article>
+
+          <article class="info-card reveal-on-scroll reveal-delay-2">
+            <div class="card-icon-wrapper">🗺️</div>
+            <h3>Plano Interactivo de Mesas</h3>
+            <p>Visualiza la ocupación de tu salón en tiempo real. Asigna cuentas, une mesas o gestiona estados de pedido con una interfaz táctil rápida e intuitiva.</p>
+          </article>
+
+          <article class="info-card reveal-on-scroll reveal-delay-1">
+            <div class="card-icon-wrapper">📦</div>
+            <h3>Inventarios por Receta Estándar</h3>
+            <p>Descuenta insumos automáticamente de tu stock con cada plato vendido. Controla mermas, costos de insumos y márgenes de ganancia al instante.</p>
+          </article>
+
+          <article class="info-card reveal-on-scroll reveal-delay-2">
+            <div class="card-icon-wrapper">📄</div>
+            <h3>Facturación POS y Electrónica</h3>
+            <p>Emite facturas válidas ante normativas tributarias sin retrasar la caja. Compatible con múltiples medios de pago integrados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Métricas de Impacto (Prueba Social) -->
+    <section class="content-section reveal-on-scroll">
+      <div class="section-container">
+        <div class="metrics-stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">+35%</span>
+            <span class="stat-label">Rotación de Mesas</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">&lt; 3s</span>
+            <span class="stat-label">Envío a Cocina</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">99.8%</span>
+            <span class="stat-label">Disponibilidad Cloud</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">0%</span>
+            <span class="stat-label">Fugas de Inventario</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Lead Magnet (Captura Secundaria) -->
+    <section id="planes" class="content-section bg-alt reveal-on-scroll">
+      <div class="section-container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <span class="badge-tag">MIGRACIÓN SENCILLA</span>
+            <h2 class="section-title">Transforma el servicio de tu restaurante hoy</h2>
+            <p class="hero-description">
+              Déjanos tus datos y un especialista gastronómico te guiará en la configuración del menú y recetario sin interrumpir la operación de tu negocio.
+            </p>
+            <ul class="value-bullets">
+              <li>✔ Configuración e importación de menú gratuita</li>
+              <li>✔ Capacitación a meseros y personal de cocina</li>
+              <li>✔ Soporte técnico en vivo durante el servicio</li>
+            </ul>
+          </div>
+
+          <div class="lead-card">
+            <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="lead-form" id="hostLeadBottomForm">
+              <input type="hidden" name="_subject" value="Contacto Directo HOST Restaurantes">
+              <input type="hidden" name="_captcha" value="false">
+
+              <h3 class="form-title">Solicitar Asesoría Personalizada</h3>
+
+              <div class="form-group">
+                <label for="lead-name">Nombre Completo *</label>
+                <input type="text" id="lead-name" name="Nombre" placeholder="Ej. Roberto Gómez" required>
+              </div>
+
+              <div class="form-group">
+                <label for="lead-email">Correo Electrónico *</label>
+                <input type="email" id="lead-email" name="Email" placeholder="roberto@restaurante.com" required>
+              </div>
+
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="lead-notes">Detalles de tu restaurante (Tipo, # de Mesas) *</label>
+                  <small class="char-counter"><span id="hostNotesCount">0</span>/150</small>
+                </div>
+                <input type="text" id="lead-notes" name="Detalles" placeholder="Ej. Gastrobar con 15 mesas" maxlength="150" required>
+              </div>
+
+              <button type="submit" class="btn-primary btn-host btn-block">
+                <span>Agendar Asesoría</span>
+              </button>
+              <p class="privacy-text">🔒 Tus datos están protegidos. Respuesta en &lt; 24 horas.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FAQ para Reducción de Fricción -->
+    <section id="ayuda" class="content-section reveal-on-scroll">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">Preguntas Frecuentes</span>
+          <h2 class="section-title">Resuelve tus dudas sobre HOST</h2>
+        </div>
+
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">¿Necesito hardware o impresoras especiales para usar HOST?</summary>
+            <p class="faq-answer">No. HOST es 100% basado en la nube. Puedes utilizar tablets Android, iPads, laptops o smartphones existentes, y se conecta con cualquier impresora térmica estándar ESC/POS.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">¿Qué sucede si se interrumpe la conexión a Internet durante el servicio?</summary>
+            <p class="faq-answer">HOST cuenta con modo offline preventivo que permite registrar comandas locales y sincronizar los datos automáticamente cuando la conexión regresa.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
-  <!-- MODAL DE SOLICITUD DE DEMO EN VIVO (Formulario de Envío Directo) -->
+
+  <!-- Modal de Solicitud de Demo -->
   <div class="modal-overlay" id="demoModal" aria-hidden="true">
     <div class="modal-container" role="dialog" aria-labelledby="modalTitle">
       <button type="button" class="modal-close" id="closeModal" aria-label="Cerrar ventana">&times;</button>
@@ -112,6 +258,7 @@
       <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="demo-form" id="hostDemoForm">
         <input type="hidden" name="_subject" value="Nueva Solicitud de Demo: HOST Restaurantes">
         <input type="hidden" name="_captcha" value="false">
+        
         <div class="form-row">
           <div class="form-group">
             <label for="nombre">Nombre *</label>
@@ -142,5 +289,6 @@
       </form>
     </div>
   </div>
+
 </body>
 </html>
