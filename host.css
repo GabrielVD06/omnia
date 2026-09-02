@@ -170,3 +170,51 @@
 .text-center {
   text-align: center;
 }
+
+/* Layout para 3 tarjetas informativas */
+.cards-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .cards-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Banner de llamado a la acción interno */
+.about-cta-banner {
+  background: linear-gradient(135deg, #FFF2EE 0%, #FFE5DC 100%);
+  border: 1px solid #FFDCD1;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .about-cta-banner {
+    flex-direction: row;
+    text-align: left;
+    padding: 2.5rem;
+  }
+}
+
+.about-cta-text h3 {
+  font-size: 1.35rem;
+  color: var(--blue-dark);
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.about-cta-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}

@@ -48,18 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 2. RETROALIMENTACIÓN DE FORMULARIOS Y REDIRECCIONES
+  // 2. REDIRECCIONES EXTERNAS ("Probar HOST Gratis" / "Demo Interactiva")
   // ==========================================================================
-  
-  // Redirección a plataforma externa al hacer clic en "Probar HOST Gratis"
-  const btnProbarGratis = document.getElementById('btn-probar-gratis-host');
   const LOGIN_URL = 'https://ashy-hill-0b8ff710f.7.azurestaticapps.net/login';
+  const loginButtons = document.querySelectorAll('#btn-probar-gratis-host, .btn-open-login');
 
-  if (btnProbarGratis) {
-    btnProbarGratis.addEventListener('click', () => {
+  loginButtons.forEach(button => {
+    button.addEventListener('click', () => {
       window.open(LOGIN_URL, '_blank', 'noopener,noreferrer');
     });
-  }
+  });
 
   // Estado visual de envío en el Formulario de Demo
   const hostDemoForm = document.getElementById('hostDemoForm');
@@ -124,18 +122,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
   elementsToReveal.forEach(el => revealObserver.observe(el));
 
-  document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+  // ==========================================================================
+  // 4. DESPLAZAMIENTO SUAVE Y LOGO TOPE (SMOOTH SCROLL)
+  // ==========================================================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-  
+
+      // Clic en el logo o en "#" vacíos te lleva directo al tope
+      if (!targetId || targetId === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
-        const navbarHeight = document.querySelector('.navbar').offsetHeight || 70;
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar ? navbar.offsetHeight : 70;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-  
+
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
