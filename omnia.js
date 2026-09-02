@@ -1,9 +1,9 @@
 /**
- * OMNIA Suite - Script de Interacción, Enrutamiento y Efectos Visuales
+ * OMNIA Suite - Script Unificado de Interacción, Enrutamiento y UX
  */
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Enrutamiento dinámico para tarjetas de producto
+  // 1. Enrutamiento Dinámico de Tarjetas de Producto
   const systemRoutes = {
     'btn-restaurantes': 'host.html',
     'btn-copropiedades': 'home.html'
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Transición del Navbar al hacer Scroll
+  // 2. Transición Visual del Navbar al hacer Scroll (Throttle via RAF)
   const navbar = document.querySelector('.navbar');
   if (navbar) {
     let ticking = false;
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Revelación Progresiva (Reveal on Scroll)
+  // 3. Revelación Progresiva (Reveal on Scroll con Observer)
   document.documentElement.classList.add('js-enabled');
 
   const observerOptions = {
@@ -58,13 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
   elementsToReveal.forEach(el => revealObserver.observe(el));
-});
-/**
- * OMNIA Suite - Restricción de Caracteres y Retroalimentación UX
- */
-document.addEventListener('DOMContentLoaded', () => {
-  
-  // Función reutilizable para gestionar el conteo y límites de input
+
+  // 4. Conteo de Caracteres y Control de Límites
   const setupCharacterLimit = (inputId, counterId, maxLength) => {
     const inputField = document.getElementById(inputId);
     const counterDisplay = document.getElementById(counterId);
@@ -74,16 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
     inputField.addEventListener('input', (e) => {
       let currentLength = e.target.value.length;
 
-      // Truncado estricto por seguridad en cliente
       if (currentLength > maxLength) {
         e.target.value = e.target.value.slice(0, maxLength);
         currentLength = maxLength;
       }
 
-      // Actualizar contador
       counterDisplay.textContent = currentLength;
 
-      // Estado visual cuando se alcanza el límite máximo
       if (currentLength >= maxLength) {
         inputField.classList.add('limit-reached');
       } else {
@@ -92,28 +84,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Inicialización exclusiva para el formulario final de OMNIA
   setupCharacterLimit('c-description', 'descriptionCount', 150);
 
-  // Agregar este bloque dentro del DOMContentLoaded en host.js
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
+  // 5. Desplazamiento Suave (Smooth Scroll)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
 
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      const navbarHeight = document.querySelector('.navbar').offsetHeight || 70;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+      if (!targetId || targetId === '#') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const navbarHeight = navbar ? navbar.offsetHeight : 70;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
-});
 
 });

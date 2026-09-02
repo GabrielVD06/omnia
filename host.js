@@ -1,5 +1,5 @@
 /**
- * HOST - Sistema POS y Gestión de Restaurantes (Lógica de Conversión)
+ * HOST - Sistema POS y Gestión de Restaurantes (Lógica Frontend)
  */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -48,24 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 2. RETROALIMENTACIÓN DE FORMULARIO DE DEMO
+  // 2. RETROALIMENTACIÓN DE FORMULARIOS Y REDIRECCIONES
   // ==========================================================================
-  const hostForm = document.getElementById('hostDemoForm');
-
-  if (hostForm) {
-    hostForm.addEventListener('submit', function () {
-      const submitBtn = this.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.75';
-        submitBtn.innerHTML = '<span>Agendando Demo...</span>';
-      }
-    });
-  }
-
-  // ==========================================================================
-  // 3. NAVEGACIÓN Y LOGIN EXTERNO
-  // ==========================================================================
+  
+  // Redirección a plataforma externa al hacer clic en "Probar HOST Gratis"
   const btnProbarGratis = document.getElementById('btn-probar-gratis-host');
   const LOGIN_URL = 'https://ashy-hill-0b8ff710f.7.azurestaticapps.net/login';
 
@@ -75,44 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==========================================================================
-  // 4. ANIMACIONES AL SCROLL Y MICROINTERACCIONES
-  // ==========================================================================
-  document.documentElement.classList.add('js-enabled');
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.15
-  };
-
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
-  elementsToReveal.forEach(el => revealObserver.observe(el));
-
-  // Dynamic Navbar Shadow
-  const navbar = document.querySelector('.navbar');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        navbar.classList.add('navbar-scrolled');
-      } else {
-        navbar.classList.remove('navbar-scrolled');
+  // Estado visual de envío en el Formulario de Demo
+  const hostDemoForm = document.getElementById('hostDemoForm');
+  if (hostDemoForm) {
+    hostDemoForm.addEventListener('submit', function () {
+      const submitBtn = this.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.75';
+        submitBtn.innerHTML = '<span>Agendando Demo...</span>';
       }
     });
   }
 
-  // ==========================================================================
-  // 5. CONTROL DE LÍMITE DE CARACTERES
-  // ==========================================================================
+  // Contador de caracteres dinámico para formulario inferior
   const setupCharacterLimit = (inputId, counterId, maxLength) => {
     const inputField = document.getElementById(inputId);
     const counterDisplay = document.getElementById(counterId);
@@ -138,4 +100,47 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   setupCharacterLimit('lead-notes', 'hostNotesCount', 150);
+
+  // ==========================================================================
+  // 3. REVELACIÓN PROGRESIVA DE ELEMENTOS (REVEAL ON SCROLL)
+  // ==========================================================================
+  document.documentElement.classList.add('js-enabled');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.15
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
+  elementsToReveal.forEach(el => revealObserver.observe(el));
+
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+  
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const navbarHeight = document.querySelector('.navbar').offsetHeight || 70;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+  
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 });

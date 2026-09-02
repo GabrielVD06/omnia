@@ -11,13 +11,12 @@
 
   <!-- Navegación Principal -->
   <header class="navbar">
-    <div class="brand">
+    <a href="#" class="brand">
       <img src="imagenes/host.png" alt="Logo de HOST Restaurantes" class="logo-img">
       <h1 class="brand-name">HOST</h1>
-    </div>
+    </a>
     <nav class="nav-links">
       <a href="#comandas">Comandas Digitales</a>
-      <a href="#soluciones">Soluciones</a>
       <a href="#funciones">Funciones</a>
       <a href="#planes">Planes</a>
       <a href="#ayuda">Ayuda</a>
@@ -37,7 +36,7 @@
   
   <main>
     <!-- Hero Section -->
-    <section class="hero-container">
+    <section href="#" class="hero-container">
       <div class="hero-content">
         <h1 class="hero-title">Optimiza el servicio<br>de tu restaurante</h1>
         <p class="hero-description">
@@ -45,8 +44,8 @@
         </p>
   
         <div class="hero-cta-group">
-          <button type="button" class="btn-primary btn-host btn-block open-demo-modal" id="btn-demo-host">Solicitar Demo en Vivo</button>
-          <button type="button" class="btn-outline btn-block">Ver Planes</button>
+          <button type="button" class="btn-primary btn-host btn-block open-demo-modal pulse-cta" id="btn-demo-host">Solicitar Demo en Vivo</button>
+          <a href="#planes" class="btn-outline btn-block text-center">Ver Planes</a>
         </div>
 
         <div class="badge-group">
@@ -106,19 +105,19 @@
     </section>
 
     <!-- Sub-Barra de Funcionalidades -->
-    <div id="funciones" class="sub-features-bar">
+    <div class="sub-features-bar">
       <span>Comandero Móvil</span> • <span>Facturación Electrónica POS</span> • <span>Recetario Estándar</span> • <span>Integración con Delivery</span>
     </div>
 
     <!-- 1. Módulos y Funciones Principales -->
-    <section id="comandas" class="content-section bg-alt reveal-on-scroll">
+    <section id="funciones" class="content-section bg-alt reveal-on-scroll">
       <div class="section-container">
         <div class="section-header">
           <span class="section-subtitle">Funcionalidades Especializadas</span>
           <h2 class="section-title">Diseñado para la velocidad y precisión de tu cocina</h2>
         </div>
 
-        <div class="cards-grid-2">
+        <div class="cards-grid-2" id="funciones">
           <article class="info-card reveal-on-scroll reveal-delay-1">
             <div class="card-icon-wrapper">📱</div>
             <h3>Comandero Móvil para Meseros</h3>
@@ -206,10 +205,9 @@
 
               <div class="form-group">
                 <div class="label-wrapper">
-                  <label for="lead-notes">Detalles de tu restaurante (Tipo, # de Mesas) *</label>
-                  <small class="char-counter"><span id="hostNotesCount">0</span>/150</small>
+                    <label for="telefono">Celular / WhatsApp *</label>
                 </div>
-                <input type="text" id="lead-notes" name="Detalles" placeholder="Ej. Gastrobar con 15 mesas" maxlength="150" required>
+                <input type="tel" id="telefono" name="Celular" placeholder="+57 300 000 0000" required>
               </div>
 
               <button type="submit" class="btn-primary btn-host btn-block">
