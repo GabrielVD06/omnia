@@ -274,3 +274,57 @@
     padding: 4rem 2rem;
   }
 }
+/* ==========================================================================
+   SECCIÓN ¿QUÉ ES HOME? (ESTRUCTURA & BANNER CTA INSPIRADO EN HOST)
+   ========================================================================== */
+
+/* Layout en rejilla de 3 columnas para tarjetas informativas */
+.cards-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .cards-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Banner de llamado a la acción principal */
+.about-cta-banner {
+  background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+  border: 1px solid #A7F3D0;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .about-cta-banner {
+    flex-direction: row;
+    text-align: left;
+    padding: 2.5rem;
+  }
+}
+
+/* Tipografía y jerarquía del banner */
+.about-cta-text h3 {
+  font-size: 1.35rem;
+  color: #064E3B; /* Verde Oscuro Corporativo */
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+  line-height: 1.25;
+}
+
+.about-cta-text p {
+  color: #047857; /* Verde Medio de Alto Contraste */
+  font-size: 0.95rem;
+  margin: 0;
+}
