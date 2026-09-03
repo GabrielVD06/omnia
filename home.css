@@ -1,26 +1,26 @@
 /* ==========================================================================
    HOME.CSS - Gestión Inteligente de Copropiedades
-   Paleta: Verdes Esmeralda (#10B981) + Azul Oscuro / Responsive Mobile-First
+   Identidad: Verde Esmeralda (#10B981) + Azul Profundo
    ========================================================================== */
 
 @import url('omnia.css');
 
 /* --------------------------------------------------------------------------
-   1. BOTONES Y ACCIONES DE CONVERSIÓN (VERDE ESMERALDA)
+   1. BOTONES Y ACENTOS DE CONVERSIÓN (VERDE ESMERALDA)
    -------------------------------------------------------------------------- */
 .btn-home {
-  background: linear-gradient(135deg, #06aa7c 0%, #047857 100%) !important;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+  background: linear-gradient(135deg, #10B981 0%, #047857 100%) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35) !important;
   color: #FFFFFF !important;
   border: none !important;
 }
 
 .btn-home:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.45);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.45) !important;
 }
 
-/* Chips y Acentos Visuales */
+/* Chips y Distintivos de Estado */
 .chip-home {
   background-color: #ECFDF5 !important;
   color: #047857 !important;
@@ -35,7 +35,7 @@
 }
 
 .border-home {
-  border-top: 4px solid #10B981 !important;
+  border-top: 5px solid #10B981 !important;
 }
 
 .bg-home-dark {
@@ -60,7 +60,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. TARJETA SHOWCASE Y COMPONENTES INTERNOS (RESPONSIVE)
+   2. UI SHOWCASE & COMPONENTES DE CARTERA
    -------------------------------------------------------------------------- */
 .home-ticket-preview {
   background: #FFFFFF;
@@ -97,7 +97,7 @@
   color: var(--blue-dark);
 }
 
-/* Metric Card */
+/* Tarjetas Métricas */
 .metric-card {
   background: #FFFFFF;
   border: 1px solid var(--border-color);
@@ -124,8 +124,13 @@
   color: var(--text-muted);
 }
 
+.card-icon-wrapper {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
 /* --------------------------------------------------------------------------
-   3. MODAL DE CONVERSIÓN DE DEMO (ISOLATED & FIXED)
+   3. VENTANA MODAL (CAPTURA DIRECTA DE LEADS)
    -------------------------------------------------------------------------- */
 .modal-overlay {
   position: fixed;
@@ -160,7 +165,6 @@
   position: relative;
   transform: translateY(20px);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border-top: 5px solid #10B981;
 }
 
 .modal-overlay.active .modal-container {
@@ -235,7 +239,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. MEDIA QUERIES & ADAPTABILIDAD RESPONSIVA
+   4. ADAPTABILIDAD RESPONSIVA Y MEDIA QUERIES
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   .hero-title {

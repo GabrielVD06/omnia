@@ -11,36 +11,35 @@
 
   <!-- Navegación Adaptada a HOME -->
   <header class="navbar">
-    <div class="brand">
+    <a href="#" class="brand">
       <img src="imagenes/home.png" alt="Logo de HOME Copropiedades" class="logo-img">
       <h1 class="brand-name">HOME</h1>
-    </div>
+    </a>
     <nav class="nav-links">
-      <a href="#expensas">Administración & Cuotas</a>
-      <a href="#reservas">Reservas de Áreas</a>
+      <a href="#expensas">Administración</a>
+      <a href="#reservas">Reservas</a>
       <a href="#citofonia">Citofonía Virtual</a>
-      <a href="#comunicados">Asambleas y Avisos</a>
-      <a href="#ayuda">Soporte</a>
+      <a href="#asambleas">Asambleas</a>
+      <a href="#faq">Ayuda</a>
     </nav>
     <div class="nav-actions">
       <a href="omniaPage.html" class="btn-ghost">OMNIA</a>
-      <!-- ACTUALIZACIÓN: Se elimina '.open-demo-modal' y se asigna ID independiente para capturar la intención de prueba directa -->
       <button type="button" class="btn-primary btn-home" id="btn-probar-home-gratis">Probar HOME Gratis</button>
     </div>
   </header>
 
   <main>
+    <!-- Hero Section con CTAs Enfocados en Conversión -->
     <section class="hero-container">
-      <div class="hero-content">
+      <div class="hero-content reveal-on-scroll">
         <h1 class="hero-title">La administración de tu copropiedad,<br>sin complicaciones</h1>
         <p class="hero-description">
           Automatiza el recaudo de expensas, gestiona reservas de zonas comunes y mantén a los residentes informados en tiempo real. HOME es la plataforma integral para conjuntos residenciales y edificios inteligentes.
         </p>
 
         <div class="hero-cta-group">
-          <!-- CTA PRINCIPAL: Mantiene la clase .open-demo-modal para activar la intención de compra consultiva -->
-          <button type="button" class="btn-primary btn-home btn-block open-demo-modal">Agendar Demo para Consejo</button>
-          <button type="button" class="btn-outline btn-block">Ver Cotización</button>
+          <button type="button" class="btn-primary btn-home btn-block open-demo-modal pulse-cta">Agendar Demo para Consejo</button>
+          <a href="#contacto" class="btn-outline btn-block text-center">Ver Cotización</a>
         </div>
 
         <div class="badge-group">
@@ -50,8 +49,8 @@
         </div>
       </div>
 
-      <!-- App Showcase -->
-      <div class="hero-preview">
+      <!-- UI Showcase Interactiva de Cartera y Reservas -->
+      <div class="hero-preview reveal-on-scroll reveal-delay-1">
         <div class="dashboard-card border-home">
           <header class="dash-header bg-home-dark">
             <div class="dash-brand">
@@ -95,19 +94,153 @@
       </div>
     </section>
 
-    <div class="sub-features-bar">
+    <!-- Sub-Barra de Capacidades Breves -->
+    <div class="sub-features-bar reveal-on-scroll">
       <span>Citofonía en App</span> • <span>Votaciones en Asambleas</span> • <span>Contabilidad Integrada</span> • <span>Pérdidas y Correspondencia</span>
     </div>
+
+    <!-- Módulos Clave del Ecosistema HOME -->
+    <section id="expensas" class="content-section bg-alt reveal-on-scroll">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">Gestión Integral</span>
+          <h2 class="section-title">Diseñado para la eficiencia del administrador y del consejo</h2>
+        </div>
+
+        <div class="cards-grid-2">
+          <article class="info-card reveal-on-scroll reveal-delay-1" id="reservas">
+            <div class="card-icon-wrapper">💳</div>
+            <h3>Recaudo de Expensas en Línea</h3>
+            <p>Genera cuentas de cobro automáticas con pasarelas de pago integradas. Reduce la cartera morosa enviando recordatorios automáticos por correo y WhatsApp.</p>
+          </article>
+
+          <article class="info-card reveal-on-scroll reveal-delay-2" id="citofonia">
+            <div class="card-icon-wrapper">📅</div>
+            <h3>Reservas de Zonas Comunes</h3>
+            <p>Sistemas automatizados de agendas para salones sociales, BBQ, zonas húmedas y canchas. Cero cruces de fechas y pagos inmediatos garantizados.</p>
+          </article>
+
+          <article class="info-card reveal-on-scroll reveal-delay-1" id="asambleas">
+            <div class="card-icon-wrapper">📞</div>
+            <h3>Citofonía Virtual e Inteligente</h3>
+            <p>Comunicación directa entre la portería y el teléfono móvil del residente sin necesidad de costosos cables físicos ni plantas telefónicas analógicas.</p>
+          </article>
+
+          <article class="info-card reveal-on-scroll reveal-delay-2">
+            <div class="card-icon-wrapper">🗳️</div>
+            <h3>Asambleas y Votaciones Digitales</h3>
+            <p>Lleva un registro claro de quórum en tiempo real y realiza votaciones seguras y transparentes durante tus asambleas ordinarias o extraordinarias.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Métricas de Impacto Financiero y Operativo -->
+    <section class="content-section reveal-on-scroll">
+      <div class="section-container">
+        <div class="metrics-stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">-35%</span>
+            <span class="stat-label">Cartera Morosa</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Citofonía Virtual</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Reserva de Zonas</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Cables e Instalación</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Captura de Prospectos Directos (Lead Capture) -->
+    <section id="contacto" class="content-section bg-alt reveal-on-scroll">
+      <div class="section-container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <span class="badge-tag">COTIZACIÓN PERSONALIZADA</span>
+            <h2 class="section-title", style="margin-bottom: 15px;">Moderniza la gestión de tu copropiedad</h2>
+            <p class="hero-description">
+              Contáctanos para conocer los datos de tu edificio o conjunto residencial. Te presentaremos un plan a la medida del número de unidades que gestionas.
+            </p>
+            <ul class="value-bullets">
+              <li>✔ Implementación inicial guiada y sin costos ocultos</li>
+              <li>✔ Migración de base de datos de propietarios incluida</li>
+              <li>✔ Capacitación a administradores y vigilantes de portería</li>
+            </ul>
+          </div>
+
+          <div class="lead-card">
+            <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="lead-form" id="homeLeadBottomForm">
+              <input type="hidden" name="_subject" value="Solicitud de Cotización HOME Copropiedades">
+              <input type="hidden" name="_captcha" value="false">
+
+              <h3 class="form-title">Solicitar Propuesta para tu Conjunto</h3>
+
+              <div class="form-group">
+                <label for="lead-name">Nombre Completo *</label>
+                <input type="text" id="lead-name" name="Nombre" placeholder="Ej. Ana María Gómez" required>
+              </div>
+
+              <div class="form-group">
+                <label for="lead-email">Correo Electrónico *</label>
+                <input type="email" id="lead-email" name="Email" placeholder="admin@torresdelvalle.com" required>
+              </div>
+
+              <div class="form-group">
+                <div class="label-wrapper">
+                  <label for="lead-phone">Celular / WhatsApp *</label>
+                </div>
+                <input type="tel" id="lead-phone" name="Celular" placeholder="+57 300 000 0000" maxlength="20" required>
+              </div>
+
+              <button type="submit" class="btn-primary btn-home btn-block">
+                <span>Solicitar Cotización</span>
+              </button>
+              <p class="privacy-text">🔒 Garantía de privacidad. Datos protegidos mediante cifrado.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas Frecuentes (FAQ) para Aumentar Confianza -->
+    <section id="faq" class="content-section reveal-on-scroll">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-subtitle">Preguntas Frecuentes</span>
+          <h2 class="section-title">Resuelve tus dudas sobre HOME</h2>
+        </div>
+
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">¿Requiere instalar infraestructura física para la citofonía?</summary>
+            <p class="faq-answer">No. La citofonía virtual de HOME funciona a través de redes celulares e internet. Portería realiza llamadas directo al smartphone o teléfono fijo de los residentes.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">¿Cómo se realiza la migración de datos desde nuestro sistema actual?</summary>
+            <p class="faq-answer">Nuestro equipo especializado importa la lista de copropietarios, residentes y coeficientes desde hojas de cálculo de Excel en menos de 24 horas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- MODAL DE CAPTURA HOME (Integración Directa para Conversión) -->
+  <!-- Modal de Captura de Conversión Assistida (Demo para Consejos) -->
   <div class="modal-overlay" id="demoModal" aria-hidden="true">
     <div class="modal-container border-home" role="dialog" aria-labelledby="modalTitle">
       <button type="button" class="modal-close" id="closeModal" aria-label="Cerrar ventana">&times;</button>
       
       <div class="modal-header">
-        <h2 id="modalTitle">Comienza a probar HOME Gratis</h2>
-        <p>Ingresa los datos de tu copropiedad para activar tu demo asistida sin compromiso.</p>
+        <h2 id="modalTitle">Agendar Demo para Consejo</h2>
+        <p>Ingresa los datos de tu copropiedad para coordinar una presentación personalizada.</p>
       </div>
   
       <form action="https://formsubmit.co/villota.gabo@gmail.com" method="POST" class="demo-form" id="homeDemoForm">
@@ -135,13 +268,19 @@
         </div>
   
         <button type="submit" class="btn-primary btn-home btn-block modal-submit-btn">
-          <span>Solicitar Acceso Inmediato</span>
+          <span>Solicitar Presentación</span>
         </button>
   
         <p class="form-privacy-note">🔒 Garantía de privacidad. Datos protegidos mediante cifrado.</p>
       </form>
     </div>
   </div>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 OMNIA Suite — HOME Copropiedades. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
