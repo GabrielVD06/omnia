@@ -7,7 +7,7 @@
   --blue-brand: #0072FF;
   --text-muted: #475569;
   --bg-light: #F8FAFC;
-  --card-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  --card-shadow: 0 20px 40px rgba(22, 36, 68, 0.08);
   --border-color: #E2E8F0;
   --radius-lg: 16px;
   --radius-md: 12px;
@@ -190,7 +190,7 @@ body {
 }
 
 .dash-header {
-  background: #0B132B;
+  background: #162758;
   color: #FFFFFF;
   padding: 0.85rem 1.25rem;
   display: flex;
@@ -857,4 +857,55 @@ html {
 .stat-mini-label {
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+/* Estilos enfocados en limpieza y confort visual */
+.tech-card {
+  max-width: 400px;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0066ff;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0052cc;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Notificación flotante discreta pero clara */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 12px 24px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.hidden {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
 }

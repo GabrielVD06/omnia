@@ -10,7 +10,7 @@
 :root {
   --host-orange-gradient: linear-gradient(135deg, #FF7350 0%, #E03E12 100%);
   --host-primary: #FF7350;
-  --host-dark: #1A0F0C;
+  --host-dark: #311d18;
   --host-bg-chip: #FFF2EE;
   --host-border-chip: #FFDCD1;
 }
@@ -51,6 +51,16 @@
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .hero-cta-group {
+    flex-direction: row;
+  }
+  
+  .btn-block {
+    width: auto;
+  }
 }
 
 /* --------------------------------------------------------------------------

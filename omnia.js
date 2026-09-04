@@ -113,3 +113,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+/* ==========================================================================
+5. SISTEMA DE NOTIFICACIÓN TOAST (Función Global)
+========================================================================== */
+function showToast(message) {
+const toast = document.getElementById('toastNotification');
+if (!toast) return;
+
+const toastSpan = toast.querySelector('span');
+if (toastSpan && message) {
+ toastSpan.textContent = message;
+}
+
+toast.classList.remove('hidden');
+
+// Ocultar notificación tras 3.5 segundos
+setTimeout(() => {
+ toast.classList.add('hidden');
+}, 3500);
+}
