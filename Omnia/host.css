@@ -1,0 +1,384 @@
+/* ==========================================================================
+   HOST.CSS - Sistema POS y Gestión de Restaurantes
+   ========================================================================== */
+
+@import url('omnia.css');
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES & ACENTOS GASTRONÓMICOS (NARANJA / CORAL)
+   -------------------------------------------------------------------------- */
+:root {
+  --host-orange-gradient: linear-gradient(135deg, #FF7350 0%, #E03E12 100%);
+  --host-primary: #FF7350;
+  --host-dark: #311d18;
+  --host-bg-chip: #FFF2EE;
+  --host-border-chip: #FFDCD1;
+}
+
+/* Botones con estilo cálido y apetecible */
+.btn-host {
+  background: var(--host-orange-gradient) !important;
+  box-shadow: 0 4px 14px rgba(224, 62, 18, 0.3) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+.btn-host:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(224, 62, 18, 0.45) !important;
+}
+
+/* Chips y Acentos */
+.chip-host {
+  background-color: var(--host-bg-chip) !important;
+  color: var(--host-primary) !important;
+  border: 1px solid var(--host-border-chip) !important;
+}
+
+.border-host {
+  border-top: 4px solid var(--host-primary) !important;
+}
+
+.bg-host-dark {
+  background: var(--host-dark) !important;
+}
+
+/* Status Pills */
+.status-pill.orange {
+  background-color: #FFEDD5;
+  color: #C2410C;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .hero-cta-group {
+    flex-direction: row;
+  }
+  
+  .btn-block {
+    width: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. COMPONENTES VISUALES POS SHOWCASE
+   -------------------------------------------------------------------------- */
+.host-order-preview {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  margin-top: 0.85rem;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.host-items-list {
+  list-style: none;
+  font-size: 0.8rem;
+}
+
+.host-items-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  color: var(--text-muted);
+}
+
+.card-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.85rem;
+  border-radius: 12px;
+  background: var(--host-bg-chip);
+  color: #E03E12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.dash-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.metric-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metric-label,
+.metric-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.status-up {
+  color: #047857;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.modal-header h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.modal-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+#planes .contact-info .section-title {
+  margin-bottom: 0.75rem;
+}
+
+/* Formulario en Grid para Modal */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+@media (min-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MODAL Y CAPTURA DE LEADS
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  padding: 1rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 5px solid var(--host-primary);
+}
+
+.modal-overlay.active .modal-container {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.demo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Alineación de utilidades de texto */
+.text-center {
+  text-align: center;
+}
+
+/* Layout para 3 tarjetas informativas */
+.cards-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .cards-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Banner de llamado a la acción interno */
+.about-cta-banner {
+  background: linear-gradient(135deg, #FFF2EE 0%, #FFE5DC 100%);
+  border: 1px solid #FFDCD1;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .about-cta-banner {
+    flex-direction: row;
+    text-align: left;
+    padding: 2.5rem;
+  }
+}
+
+.about-cta-text h3 {
+  font-size: 1.35rem;
+  color: var(--blue-dark);
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.about-cta-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--blue-dark);
+  cursor: pointer;
+}
+
+.nav-toggle .icon-close {
+  display: none;
+}
+
+.navbar.nav-open .nav-toggle .icon-menu {
+  display: none;
+}
+
+.navbar.nav-open .nav-toggle .icon-close {
+  display: block;
+}
+
+.nav-home-link {
+  display: none;
+}
+
+.footer-links a:hover {
+  color: #E03E12;
+}
+
+@media (max-width: 1023px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar .brand {
+    order: 1;
+  }
+
+  .nav-actions {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-actions .btn-ghost {
+    display: none;
+  }
+
+  .nav-actions .btn-host {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .nav-links {
+    display: none;
+    order: 3;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-top: 0.75rem;
+    padding: 0.35rem 0 0.35rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .navbar.nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--blue-dark);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 0.15rem;
+  }
+
+  .nav-links a:hover {
+    color: #E03E12;
+  }
+
+  .nav-home-link {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links a:hover {
+    color: #E03E12;
+  }
+}

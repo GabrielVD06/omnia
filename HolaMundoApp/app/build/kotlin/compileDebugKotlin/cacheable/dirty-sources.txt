@@ -1,6 +1,0 @@
-C:\repos\omnia\HolaMundoApp\app\src\main\java\com\ejemplo\holamundo\model\FacturaVentaData.kt
-C:\repos\omnia\HolaMundoApp\app\src\main\java\com\ejemplo\holamundo\printer\PosPrinterTestDriver.kt
-C:\repos\omnia\HolaMundoApp\app\src\main\java\com\ejemplo\holamundo\ui\MainActivity.kt
-C:\repos\omnia\HolaMundoApp\app\src\main\java\com\ejemplo\holamundo\printer\EscPosInvoiceFormatter.kt
-C:\repos\omnia\HolaMundoApp\app\src\main\java\com\ejemplo\holamundo\model\FacturaXmlParser.kt
-C:\repos\omnia\HolaMundoApp\app\src\main\java\com\ejemplo\holamundo\service\XmlFolderMonitorService.kt
